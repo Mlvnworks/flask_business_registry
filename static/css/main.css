@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.id-preview-container img{
+    width: 250px;
+    object-fit: contain;
+    background-color: #ccc;
+    object-position: center;
+}

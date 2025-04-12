@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Successfully Added!</title>
+{% endblock %}
+
+{% block pageStyle %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/add-success.css') }}" />
+{% endblock %}
+
+
+{% block content %}
+    <div id="add-result-container" class="shadow-sm">
+        <p class="text-center h1 mb-5">Business Registered!</p>
+        <div class="text-center mb-5">
+            <p class="h3 d-flex justify-content-center align-items-center">
+                <span id="registration-id">{{ businessDetails[0] }} </span>
+                
+                <button class="btn btn-lg" id="copy-btn"><i class="bi bi-copy h3"></i></button>
+            </p>
+            <p class="opacity-50">Registation ID</p>
+        </div>
+        <div class="mt-5">
+            <div class="d-flex justify-content-between align-items-center m-0 p-0">
+                <h4 class="h4  m-0 p-0">Business Details</h4>
+                <button class="btn btn-sm " id="show-business-details-btn"><i class="bi bi-caret-down-fill"></i></button>
+            </div>
+            <hr>
+            <div id="business-details" class="d-none">
+                <div>
+                    <label for="">Registration Date</label>
+                    <input type="text" class="form-control" value="{{ datetime.fromtimestamp(businessDetails[1]).strftime('%B %d, %Y %I:%M%p').lower() }}" readonly>
+                </div>
+                <div>
+                    <label for="">Business Name</label>
+                    <input type="text" class="form-control" value="{{ businessDetails[2] }}" readonly>
+                </div>
+                <div>
+                    <label for="">Business Type</label>
+                    <input type="text" class="form-control" value="{{ businessDetails[3] }}" readonly>
+                </div>                
+                <div>
+                    <label for="">Owner</label>
+                    <input type="text" class="form-control" value="{{ businessDetails[4] }}" readonly>
+                </div>   
+                <hr>             
+                <div class="text-center" id="identification">
+                    <h4 for="" class="h4 text-center">
+                        Identification 
+                        <i class="bi bi-question-circle-fill" title="Only Admin can see the identification"></i>
+                    </h4>
+                    <div>
+                        <label for="">Front ID</label>
+                        <br>
+                        <img src="{{ businessDetails[5] }}" id="front-id" alt="Front ID">
+                    </div>
+                    <div>
+                        <label for="">Back ID</label>
+                        <br>
+                        <img src="{{ businessDetails[6] }}" id="back-id" alt="Front ID">
+                    </div>
+                </div>  
+                <hr>
+                <div>
+                    <label for="">Website</label>
+                    <input type="text" class="form-control" value="{{ businessDetails[7] if businessDetails[7] else 'Not Set' }}" readonly>
+                </div>               
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{{ url_for('home') }}" class="btn btn-primary">Go to Home</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/add-success.js') }}"></script>
+{% endblock %}
+

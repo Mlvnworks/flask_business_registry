@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Operation Failed!</title>
+{% endblock %}
+
+{% block pageStyle %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/add-failed.css') }}" />
+{% endblock %}
+
+
+{% block content %}
+    <div id="add-result-container" class="shadow-sm text-center">
+        <h1 class="h1">Something went wrong!</h1>
+        <p id="err-msg">{{ err }}</p>
+
+        <a href="{{url_for('home')}}" class="btn btn-primary mt-5" >Dashboard</a>
+    </div>
+{% endblock %}

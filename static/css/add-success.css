@@ -1,0 +1,45 @@
+#add-result-container {
+  background-color: rgb(180, 246, 180);
+  margin-block: 100px;
+  padding: 25px;
+  border-radius: 15px;
+  width: min(700px, 90vw);
+  margin-inline: auto;
+}
+
+#show-business-details-btn{
+    transition: rotate 300ms;
+}
+
+#business-details > div {
+    margin-block: 20px;
+    text-align: center;
+}
+
+#business-details > div > label {
+    margin-bottom: 5px;
+}
+
+#business-details > div >input{
+    background: none;
+    border: none;
+    font-size: 23px;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+}
+
+#identification img{
+    width: min(300px, 70%);
+    object-fit: contain;
+    object-position: center;
+    background-color: #ccc;
+    border-radius: 15px;
+}
+
+#identification div{
+    margin-block: 15px;
+}
+#identification div > label{
+    opacity: 0.5;
+}

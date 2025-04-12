@@ -1,0 +1,16 @@
+#add-result-container {
+    background-color: rgb(246, 191, 180);
+    margin-block: 100px;
+    padding: 25px;
+    border-radius: 15px;
+    width: min(700px, 90vw);
+    margin-inline: auto;
+  }
+
+  #err-msg{
+    text-align: start;
+    background-color: #ededed;
+    padding: 10px;
+    margin-top: 50px;
+    border-left: 5px solid red;
+  }

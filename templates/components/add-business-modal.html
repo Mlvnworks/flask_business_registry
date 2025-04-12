@@ -1,0 +1,112 @@
+<div class="modal fade" id="add-business-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">New Business</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="http://127.0.0.1:5000/add-business" method="POST" id="new-business-form" enctype="multipart/form-data">
+            <div>
+                <label  class="mb-1" for="">Business Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter Business Name" required />
+            </div>
+            <div class="mt-3">
+                <label  class="mb-1"for="">Business Type</label>
+                <select name="type" id="" class="form-select" required>
+                    <option>-- Select Business Type --</option>
+                    <option value="Sole Proprietorship">Sole Proprietorship</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Corporation">Corporation</option>
+                    <option value="Limited Liability Company (LLC)">Limited Liability Company (LLC)</option>
+                    <option value="Cooperative">Cooperative</option>
+                    <option value="Franchise">Franchise</option>
+                    <option value="Salon/Barbershop">Salon/Barbershop</option>
+                    <option value="Consulting">Consulting</option>
+                    <option value="Tutoring/Coaching">Tutoring/Coaching</option>
+                    <option value="Cleaning Services">Cleaning Services</option>
+                    <option value="Repair Services">Repair Services</option>
+                    <option value="Clothing Boutique">Clothing Boutique</option>
+                    <option value="Online Store">Online Store</option>
+                    <option value="Convenience Store">Convenience Store</option>
+                    <option value="Electronics Shop">Electronics Shop</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Café">Café</option>
+                    <option value="Food Truck">Food Truck</option>
+                    <option value="Catering Services">Catering Services</option>
+                    <option value="Bakery">Bakery</option>
+                    <option value="Furniture Manufacturing">Furniture Manufacturing</option>
+                    <option value="Clothing Manufacturing">Clothing Manufacturing</option>
+                    <option value="Electronics Manufacturing">Electronics Manufacturing</option>
+                    <option value="Food Production">Food Production</option>
+                    <option value="Crop Farming">Crop Farming</option>
+                    <option value="Livestock Farming">Livestock Farming</option>
+                    <option value="Fish Farming">Fish Farming</option>
+                    <option value="Organic Farming">Organic Farming</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="App Development">App Development</option>
+                    <option value="Digital Marketing Agency">Digital Marketing Agency</option>
+                    <option value="Web Hosting">Web Hosting</option>
+                    <option value="Dropshipping">Dropshipping</option>
+                    <option value="Gym">Gym</option>
+                    <option value="Spa">Spa</option>
+                    <option value="Mental Health Counseling">Mental Health Counseling</option>
+                    <option value="Health Supplements">Health Supplements</option>
+                    <option value="Real Estate Brokerage">Real Estate Brokerage</option>
+                    <option value="Property Rental">Property Rental</option>
+                    <option value="Home Renovation">Home Renovation</option>
+                    <option value="Construction Firm">Construction Firm</option>
+                    <option value="Accounting Firm">Accounting Firm</option>
+                    <option value="Insurance Agency">Insurance Agency</option>
+                    <option value="Legal Services">Legal Services</option>
+                    <option value="Loan Provider">Loan Provider</option>
+                    <option value="Language School">Language School</option>
+                    <option value="Online Courses">Online Courses</option>
+                    <option value="Workshops">Workshops</option>
+                    <option value="Corporate Training">Corporate Training</option>
+                    <option value="Content Creation">Content Creation</option>
+
+                </select>
+            </div>
+            <div class="mt-3">
+                <label  class="mb-1"for="">Owner Name</label>
+                <input type="text" name="owner" class="form-control" placeholder="Enter Owner Name" required/>
+            </div>
+            <hr>
+            <div class="mt-3">
+                <p  class="mb-1 text-center fw-bold" for="">Identification</p>
+                <div class="mb-3">
+                    <div class="id-preview-container text-center d-none" id="front-id-preview">
+                        <img  src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCyMAmi7_4hk4B-1fb1kjI4xZXVdBkQ2uhaBqRjz9id8kHz8r775VY64OsW5qx6EFov4VkEH-YXoQ9XBqfVKShN5n9MJpautfTOcpUCMw" alt="">
+                    </div>
+                    
+                    <label for="">Front ID</label>
+                    <input type="file" class="form-control" id="front-id-file-input" accept="image/*" required/>
+                    <input type="hidden" name="front-id" id="front-id-data-input">
+                </div>
+                <div class="">
+                    <div class="id-preview-container text-center d-none" id="back-id-preview">
+                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCyMAmi7_4hk4B-1fb1kjI4xZXVdBkQ2uhaBqRjz9id8kHz8r775VY64OsW5qx6EFov4VkEH-YXoQ9XBqfVKShN5n9MJpautfTOcpUCMw" alt="">
+                    </div>
+                    <label for="">Back ID</label>
+                    <input type="file" class="form-control" accept="image/*" id="back-id-file-input" required/>
+                    <input type="hidden" name="back-id" id="back-id-data-input">
+                </div>
+            </div>
+            <hr>
+            <div class="mt-3">
+                <label  class="mb-1" for="">Website (optional)</label>
+                <input type="text" name="website" class="form-control" placeholder="Enter Business Website" />
+            </div>
+            <button class="d-none" type="reset" id="reset-new-business-form"></button>
+            <button class="d-none" type="submit" id="submit-new-business-form"></button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.querySelector('#reset-new-business-form').click()">Clear</button>
+          <button type="button" class="btn btn-primary" onclick="document.querySelector('#submit-new-business-form').click()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="{{ url_for('static', filename='js/add-business-modal.js') }}"></script>
