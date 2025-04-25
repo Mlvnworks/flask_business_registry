@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" />
+
+    <!-- PAGE TITLE -->
     {% block title %}{% endblock %}
     <!-- BOOTSTRAP -->
     <link
@@ -29,6 +33,7 @@
      
     <!--  PAGE CSS -->
     {% block pageStyle %}{% endblock %}
+
   </head>
   <body>
    

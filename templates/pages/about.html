@@ -1,50 +1,42 @@
 {% extends 'index.html' %} 
 <!-- TITLE -->
 {% block title %}
-<title>Business Registry | About</title>
+<title>Business Profile Archive | About</title>
 {% endblock %}
+
+<!-- PAGE STYLE -->
+{% block pageStyle %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" />
+{% endblock %}
+
 
 <!-- MAIN CONTENT -->
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="display-4">About Us</h1>
-            <p class="lead">Learn more about our mission, vision, and values.</p>
+<div class="about-container bg-primary text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="display-4 about-h1">Business Profile Archive</h1>
+                <p class="lead">Where every business gets listed.</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+                <p class="text-center" id="about-text">
+                    This site was created as a case study to showcase the importance of accessible and organized business data. It provides a simple interface to view and record basic information about various businesses.
+                </p>
+        </div>
+        <div class="mt-5">
+            <div class="text-center">
+                <h3>Developers</h3>
+                <ul id="dev-list">
+                    <li>Melvin Agustin</li>
+                    <li >Angel Manzano</li>
+                    <li >Juybin Araña</li>
+                    <li >Alexander Ferrer</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <h3>Our Mission</h3>
-            <p>
-                Our mission is to provide a platform for businesses to connect, grow, and succeed. 
-                We aim to empower entrepreneurs and organizations by offering innovative solutions.
-            </p>
-        </div>
-        <div class="col-md-6">
-            <h3>Our Vision</h3>
-            <p>
-                To be the leading business registry platform that fosters collaboration and innovation 
-                across industries, creating a thriving global business community.
-            </p>
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <h3>Our Values</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Integrity</li>
-                <li class="list-group-item">Innovation</li>
-                <li class="list-group-item">Collaboration</li>
-                <li class="list-group-item">Excellence</li>
-                <li class="list-group-item">Customer Focus</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-12 text-center">
-            <a href="/" class="btn btn-primary">Back to Home</a>
-        </div>
-    </div>
+    <svg  id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0d6efd"  fill-opacity="1" d="M0,256L60,229.3C120,203,240,149,360,128C480,107,600,117,720,144C840,171,960,213,1080,240C1200,267,1320,277,1380,282.7L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>     
 </div>
 {% endblock %}

@@ -4,6 +4,27 @@ const deleteBtns = document.querySelectorAll('.delete-btn')
 const frontId = document.querySelector("#front-id");
 const backId = document.querySelector("#back-id");
 
+
+const searchInput = document.querySelector("#search-input");
+const records = document.querySelectorAll(".record")
+
+
+// SEARCH BUSINESS RECORD FUNCTIONALITY
+searchInput.addEventListener("input",  (e) => {
+    const keyword = searchInput.value.toLowerCase();
+
+    Array.from(records).forEach(record => {
+        const recordData = record.textContent.trim().toLowerCase();
+        if(recordData.includes(keyword)){
+            record.classList.remove("d-none");
+        }else{
+            record.classList.add("d-none");
+        }
+    })  
+})
+
+
+// DELETE BUSINESS RECORD FUNCTIONALITY
 Array.from(deleteBtns).forEach(deleteBtn => {
     deleteBtn.addEventListener("click", () => {
         const businessId = deleteBtn.getAttribute('data-id');
@@ -14,6 +35,8 @@ Array.from(deleteBtns).forEach(deleteBtn => {
     })
 })
 
+
+// VIEW OWNER ID FUNCTIONALITY
 Array.from(viewBtns).forEach(viewBtn => 
     viewBtn.addEventListener("click", async () => {
         const businessId = viewBtn.getAttribute("data-id");
@@ -22,6 +45,5 @@ Array.from(viewBtns).forEach(viewBtn =>
 
         frontId.src = data.data[0][5];
         backId.src = data.data[0][6];
-        console.log(data);
     })
 )

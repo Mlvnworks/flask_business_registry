@@ -1,7 +1,7 @@
 {% extends 'index.html' %} 
 <!-- TITLE -->
 {% block title %}
-<title> Business Registry | Dashboard</title>
+<title> Business Profile Archive | Dashboard</title>
 {% endblock %}
 <!-- PAGE CSS -->
 {% block pageStyle %}
@@ -28,6 +28,7 @@
             class="form-control"
             placeholder="Search Business"
             aria-describedby="basic-addon2"
+            id="search-input"
           />
           <span class="input-group-text" id="basic-addon2">
             <i class="bi bi-search"></i>
@@ -53,7 +54,7 @@
           <tbody  style="font-size: 12px;">
             {% if businessList|length > 0: %}
               {% for businessItem in businessList: %}
-                <tr>
+                <tr class="record">
                   <td>{{ businessItem[0] }}</td>
                   <td>{{ datetime.fromtimestamp(businessItem[1]).strftime('%B %d, %Y %I:%M%p').lower() }}</td>
                   <td>{{ businessItem[2] }}</td>

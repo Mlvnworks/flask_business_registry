@@ -1,0 +1,33 @@
+.about-h1{
+    font-weight: 900;
+}
+
+
+.about-container{
+    padding: 50px;
+    padding-top: 150px;
+    position: relative;
+}
+
+#about-text{
+    width: min(670px, 95vw);
+    margin-inline: auto;
+}
+
+#dev-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#dev-list li{
+    margin-top: 10px;
+}
+
+#wave{
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    bottom: -220px;
+    z-index: -1;
+}
