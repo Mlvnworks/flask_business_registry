@@ -20,9 +20,13 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
-    <!--  -->
+    <!--  GLOBAL CSS-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 
+
+    <!-- COMPONENTS CSS -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/main-header.css') }}">
+     
     <!--  PAGE CSS -->
     {% block pageStyle %}{% endblock %}
   </head>

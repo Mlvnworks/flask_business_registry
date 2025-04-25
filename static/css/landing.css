@@ -1,0 +1,44 @@
+#showcase{
+    min-height: 600px;
+    position: relative;
+}
+
+#showcase > div{
+    width: min(800px, 90vw);
+    margin-inline: auto;
+    text-align: center;
+    padding-top: 200px;
+
+}
+#showcase > div h1{
+    font-size: 65px;
+    margin-bottom: 0;
+}
+
+#showcase > div h1 span{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#showcase > div p{
+    font-size: 33px;
+    margin-top: 20px;
+    font-weight: 400;
+    color: #efefef;
+    /* font-style: italic; */
+}
+
+#get-start-btn{
+    font-size: 23px;
+    color: #222;
+    background-color: #fff;
+    width: 300px;
+    padding: 12px;
+    margin-top: 30px;
+}
+
+#wave{
+    position: absolute;
+    bottom: -220px;
+    z-index: -1;
+}

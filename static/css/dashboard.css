@@ -1,0 +1,28 @@
+
+#landing-header{
+    width: 90vw;
+}
+
+main{
+    /* margin-top: 200px; */
+    background-color: #0d6efd;
+    padding-top: 140px;
+    color: #fff;
+    height: 600px;
+    position: relative;
+}
+
+
+#table-container{
+
+    height: 400px;
+    overflow-y: auto;
+    background-color: #ffffff59;
+}
+
+
+#wave{
+    position: absolute;
+    bottom: -230px;
+    z-index: -1;
+}

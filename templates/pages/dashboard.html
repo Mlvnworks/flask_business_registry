@@ -4,10 +4,15 @@
 <title> Business Registry | Dashboard</title>
 {% endblock %}
 <!-- PAGE CSS -->
+{% block pageStyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+{% endblock %}
+
 
 <!-- MAIN CONTENT -->
 {% block content %}
-  <main class="container mt-5">
+  <main>
+    <section class="container">
       <div class="d-flex justify-content-between align-items-center">
         <div class="d-flex justify-content-start gap-3 align-items-center">
           <h3 class="h3 m-0 p-0">Registered Business List</h3>
@@ -30,48 +35,54 @@
         </div>
       </div>
       <hr />
-      <table class="table">
-        <thead>
-          <tr class="table-primary">
-            <th>Registration ID</th>
-            <th>Date Registration</th>
-            <th>Business Name</th>
-            <th>Type</th>
-            <th>Owner</th>
-            <th>Owner Identification</th>
-            <th>Website</th>
-            <th>Expiration</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody  style="font-size: 12px;">
-          {% if businessList|length > 0: %}
-            {% for businessItem in businessList: %}
-              <tr>
-                <td>{{ businessItem[0] }}</td>
-                <td>{{ datetime.fromtimestamp(businessItem[1]).strftime('%B %d, %Y %I:%M%p').lower() }}</td>
-                <td>{{ businessItem[2] }}</td>
-                <td>{{ businessItem[3] }}</td>
-                <td>{{ businessItem[4] }}</td>
-                <td>
-                  <button class="btn btn-primary btn-sm w-100 view-id-btn" data-bs-toggle="modal" data-bs-target="#identification-modal" data-id="{{ businessItem[0] }}">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                </td>
-                <td>{{ businessItem[7] if businessItem[7] else 'Not Set' }}</td>
-                <td>{{ datetime.fromtimestamp(businessItem[8]).strftime('%B %d, %Y %I:%M%p').lower() }}</td>
-                <td class="text-center">
-                  <button class="btn btn-danger btn-sm delete-btn" data-id="{{ businessItem[0] }}"><i class="bi bi-trash"></i></button>
-                </td>
-              </tr>
-              {% endfor %}
-            {% else %}
-              <tr>
-                <td colspan="9" class="text-center">No data to show</td>
-              </tr>
-            {% endif %}
-        </tbody>
-      </table>
+      <div id="table-container">
+        <table class="table">
+          <thead>
+            <tr class="table-primary">
+              <th>Registration ID</th>
+              <th>Date Registration</th>
+              <th>Business Name</th>
+              <th>Type</th>
+              <th>Owner</th>
+              <th>Owner Identification</th>
+              <th>Website</th>
+              <th>Expiration</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody  style="font-size: 12px;">
+            {% if businessList|length > 0: %}
+              {% for businessItem in businessList: %}
+                <tr>
+                  <td>{{ businessItem[0] }}</td>
+                  <td>{{ datetime.fromtimestamp(businessItem[1]).strftime('%B %d, %Y %I:%M%p').lower() }}</td>
+                  <td>{{ businessItem[2] }}</td>
+                  <td>{{ businessItem[3] }}</td>
+                  <td>{{ businessItem[4] }}</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm w-100 view-id-btn" data-bs-toggle="modal" data-bs-target="#identification-modal" data-id="{{ businessItem[0] }}">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </td>
+                  <td>{{ businessItem[7] if businessItem[7] else 'Not Set' }}</td>
+                  <td>{{ datetime.fromtimestamp(businessItem[8]).strftime('%B %d, %Y %I:%M%p').lower() }}</td>
+                  <td class="text-center">
+                    <button class="btn btn-danger btn-sm delete-btn" data-id="{{ businessItem[0] }}"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="9" class="text-center">No data to show</td>
+                </tr>
+              {% endif %}
+          </tbody>
+        </table>
+      </div>
+      
+
+    </section>
+    <svg  id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0d6efd"  fill-opacity="1" d="M0,256L60,229.3C120,203,240,149,360,128C480,107,600,117,720,144C840,171,960,213,1080,240C1200,267,1320,277,1380,282.7L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>     
   </main>
   {% include '/components/add-business-modal.html' %}
   {% include '/components/identification-modal.html' %}

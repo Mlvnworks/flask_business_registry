@@ -7,10 +7,13 @@ business = Business()
 app = Flask(__name__)
 
 
-
-
 @app.route('/')
 def home():
+
+    return render_template('/pages/landing.html')
+
+@app.route('/dashboard')
+def dashboard():
     businessList = business.getBusinessesList()
     
     return render_template('/pages/dashboard.html', businessList = businessList['data'], datetime = datetime )
@@ -19,6 +22,9 @@ def home():
 @app.route('/about')
 def about():
     return render_template('/pages/about.html')
+
+
+
 
 
 @app.route('/add-business', methods=['GET', 'POST'])
@@ -72,12 +78,12 @@ def getId(id):
     return business.getBusinessById(id)
 
 
+
 @app.route('/delete/<id>')
 def remove(id):
     response = business.remove(id)
-    return redirect(url_for('home', response = response['data']))
+    return redirect(url_for('dashboard', response = response['data']))
     
-
 
 
 
