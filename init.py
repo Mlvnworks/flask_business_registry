@@ -1,11 +1,16 @@
 from classes.config import Config
 from classes.business import Business
+from classes.payment import Payment
+
 
 
 business = Business()
+payment = Payment()
 
-response =Config.run_query('''
-    DELETE FROM business;
+
+
+res = Config.run_query('''
+    DELETE FROM payment
 ''')
 
-print(response)
+print(res)

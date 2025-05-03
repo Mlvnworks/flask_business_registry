@@ -27,7 +27,11 @@ class Business:
     # FETCH BUSINESS
     def getBusinessesList(sefl):
         return Config.run_query('''
-            SELECT * FROM business ORDER BY date_registration DESC;
+            SELECT *,
+                    payment.payment_id
+            FROM business
+            LEFT JOIN payment ON payment.business_id = business.business_id 
+            ORDER BY date_registration DESC;
         ''')
     
     # FETCH BUSINESS'S DATA BY ID
@@ -42,3 +46,24 @@ class Business:
                 DELETE FROM business WHERE business_id = {id};
         ''')    
         
+
+    # GET OVERALL BUSINESS REPORTS
+    def getReports(self):
+        total_business_number =  Config.run_query('''
+            SELECT 
+                    count(*) AS total_business_number
+            from business;
+        ''')["data"]
+    
+        business_type_sumarry = Config.run_query(f'''
+            SELECT 
+                COUNT(*) AS total_business_number,
+                b.type,
+                CAST((CAST((SELECT COUNT(*) FROM business WHERE type = b.type) AS FLOAT) / CAST((SELECT COUNT(*) FROM business) AS FLOAT)) AS FLOAT(10, 2)) * 100 AS percentage
+            FROM business b
+            GROUP BY b.type
+            ORDER BY total_business_number DESC;
+        ''')["data"]
+
+
+        return (total_business_number, business_type_sumarry)

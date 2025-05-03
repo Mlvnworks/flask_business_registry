@@ -21,8 +21,11 @@ main{
 }
 
 
+
 #wave{
     position: absolute;
     bottom: -230px;
     z-index: -1;
 }
+
+

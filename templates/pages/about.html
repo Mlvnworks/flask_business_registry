@@ -16,23 +16,47 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1 class="display-4 about-h1">Business Profile Archive</h1>
+                <h1 class="display-4 about-h1">Online Business Profile Archive</h1>
                 <p class="lead">Where every business gets listed.</p>
             </div>
         </div>
         <div class="row mt-4">
                 <p class="text-center" id="about-text">
-                    This site was created as a case study to showcase the importance of accessible and organized business data. It provides a simple interface to view and record basic information about various businesses.
+                    This site was created to showcase the importance of accessible and organized business data. It provides a simple interface to view and record basic information about various businesses.
                 </p>
         </div>
         <div class="mt-5">
             <div class="text-center">
                 <h3>Developers</h3>
-                <ul id="dev-list">
-                    <li>Melvin Agustin</li>
-                    <li >Angel Manzano</li>
-                    <li >Juybin Araña</li>
-                    <li >Alexander Ferrer</li>
+                <ul id="dev-list" class="d-flex flex-wrap justify-content-evenly align-items-center">
+                    <li>
+                        <div>    
+                            <img width="120px" src="{{ url_for('static', filename='img/juybin-profile.png') }}"  class="mb-3"  alt=""> 
+                            <br>  
+                            Juybin Araña
+                        </div>
+                    </li>
+                    <li >
+                        <div>
+                            <img width="120px"  src="{{ url_for('static', filename='img/melvin-profile.jpg') }}"  class="mb-3"  alt=""> 
+                            <br>   
+                            Melvin Agustin
+                         </div>
+                </li>
+                    <li >
+                        <div>
+                            <img width="120px" height="120px"  style="object-fit: cover; object-position: center;" src="{{ url_for('static', filename='img/angel-profile.JPG') }}"  class="mb-3"  alt="">  
+                            <br>  
+                            Angel Manzano 
+                        </div>
+                    </li>
+                    <li >
+                        <div>
+                            <img width="120px" height="120px" style="object-fit: cover;" src="{{ url_for('static', filename='img/alexander.png') }}"  class="mb-3"  alt="">  
+                            <br>  
+                            Alexander Ferrer
+                        </div>
+                </li>
                 </ul>
             </div>
         </div>

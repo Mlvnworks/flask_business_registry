@@ -1,0 +1,49 @@
+
+<div class="modal fade" id="payment-modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Payment</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="document.querySelector('#form-reset').click()"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/save-payment" method="POST">
+                <div>
+                    <label for="">Mode of Payment</label>
+                    <div id="payment-methods" class="d-flex justify-content-evenly align-items-center mt-3 mb-3">
+                        <label for="cash">
+                            <input type="radio" name="payment-method" id="cash" value="cash" required>
+                            Cash
+                        </label>
+                        <label for="e-wallet">
+                            <input type="radio" name="payment-method" id="e-wallet" value="e-wallet" required>
+                            E-wallet
+                        </label>
+                        <label for="bank-transfer">
+                            <input type="radio" name="payment-method" id="bank-transfer" value="bank-transfer" required>
+                            Bank Transfer
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="">Upload Payment Receipt</label>
+                    <div>
+                        <img src="{{ url_for('static', filename='img/image-placeholder.png') }}" alt="" id="payment-preview">
+                        <input type="text" class="opacity-0" name="payment-receipt" id="payment-receipt" required >
+                        <input  type="file" class="form-control" id="file-selector"  accept=".jpg, .jpeg, .png, .pdf" >
+                    </div>
+                </div>
+                <input type="hidden" name="business-id" id="business-id-input" required>
+                <button class="d-none" id="submit-payment-btn"></button>
+                <button type="reset" class="d-none" id="form-reset"></button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  onclick="document.querySelector('#form-reset').click()" >Close</button>
+          <button type="button" class="btn btn-danger d-none"  id="remove-btn">Remove Payment</button>
+          <button type="button" class="btn btn-success"  id="save-btn" onclick="document.querySelector('#submit-payment-btn').click()" >Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="{{ url_for('static', filename='js/payment-modal.js') }}"></script>

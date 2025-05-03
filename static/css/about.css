@@ -18,10 +18,27 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 100px;
+    padding-bottom: 30px;
 }
+
 
 #dev-list li{
     margin-top: 10px;
+}
+
+
+#dev-list img{
+    border-radius: 50%;
+    border: 5px solid #ededed;
+    box-shadow: 0px 0px 10px #222;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
+#dev-list li:nth-of-type(2),#dev-list li:nth-of-type(3) {
+    scale: 1.5;
 }
 
 #wave{

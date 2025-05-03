@@ -1,0 +1,11 @@
+{% if response[0] != '' %}
+    {% if response[0] == 'False' %}
+        <div class="response response-suc">
+            <p>{{ response[1] }}</p>
+        </div>
+    {% else %}
+        <div class="response response-err">
+            <p>{{ response[1] }}</p>
+        </div>
+    {% endif %}
+{% endif %}

@@ -68,6 +68,7 @@
                   <td>{{ businessItem[7] if businessItem[7] else 'Not Set' }}</td>
                   <td>{{ datetime.fromtimestamp(businessItem[8]).strftime('%B %d, %Y %I:%M%p').lower() }}</td>
                   <td class="text-center">
+                    <button class="btn btn-success btn-sm pay-btn"  data-bs-toggle="modal" data-bs-target="#payment-modal" data-id="{{ businessItem[0] }}"  data-payment-id="{{ businessItem[9] }}"><i class="bi bi-bank2"></i></button>
                     <button class="btn btn-danger btn-sm delete-btn" data-id="{{ businessItem[0] }}"><i class="bi bi-trash"></i></button>
                   </td>
                 </tr>
@@ -87,6 +88,10 @@
   </main>
   {% include '/components/add-business-modal.html' %}
   {% include '/components/identification-modal.html' %}
+  {% include '/components/payment-modal.html' %}
 
   <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 {% endblock%}
+
+<!-- RESPONSE -->
+{% include 'components/response.html' %}

@@ -1,0 +1,22 @@
+#landing-header{
+    width: 90vw;
+}
+
+#reports-section{
+    padding-top: 140px;
+    position: relative;
+    margin-bottom: 200px;
+}
+
+
+#wave{
+    position: absolute;
+    bottom: -250px;
+    z-index: -1;
+}
+
+#reports-header{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+}

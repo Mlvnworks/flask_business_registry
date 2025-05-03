@@ -30,7 +30,10 @@
 
     <!-- COMPONENTS CSS -->
      <link rel="stylesheet" href="{{ url_for('static', filename='css/main-header.css') }}">
-     
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/payment-modal.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/response.css') }}">
+
+
     <!--  PAGE CSS -->
     {% block pageStyle %}{% endblock %}
 
@@ -42,5 +45,9 @@
 
      <!-- CONTENT -->
      {% block content %}{% endblock %}
+
+
+     
+     
   </body>
 </html>
