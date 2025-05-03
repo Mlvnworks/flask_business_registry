@@ -10,7 +10,8 @@ payment = Payment()
 
 
 res = Config.run_query('''
-    DELETE FROM payment
+   
+    DELETE FROM business;
 ''')
 
 print(res)
